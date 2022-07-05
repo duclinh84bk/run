@@ -12,7 +12,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 az extension add -n ml -y
 az login --service-principal --username ${loginString[0]} --password ${loginString[1]} --tenant ${loginString[2]};
 
-sleep 15m
+sleep 20m
 for location in "${locations[@]}"
 do
        echo "$location"
