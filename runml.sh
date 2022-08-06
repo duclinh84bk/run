@@ -23,7 +23,7 @@ sleep 15m
 for location in "${locations[@]}"
 do
     echo "$location"
-    for i in 1 2 3
+    for i in 1 2 3 4
     do
         ip=$(az ml compute list-nodes -n run$i -g NetworkWatcherRG -w $location --query "[0].public_ip_address" -o tsv)
         if [[ "$ip" != "" ]]
