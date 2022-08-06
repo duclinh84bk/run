@@ -17,7 +17,11 @@ echo | sudo add-apt-repository ppa:micahflee/ppa
 echo Y | sudo apt install sshpass
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 az extension add -n ml -y
-az login --service-principal --username ${loginString[0]} --password ${loginString[1]} --tenant ${loginString[2]};
+if [ "${#loginString[@]}" -gt 2 ]; then
+    az login --service-principal --username ${loginString[0]} --password ${loginString[1]} --tenant ${loginString[2]};
+elif [ "${#loginString[@]}" -gt 1 ]; then
+    az login -u ${loginString[0]} -p ${loginString[1]};
+fi
 
 sleep 15m
 for location in "${locations[@]}"
